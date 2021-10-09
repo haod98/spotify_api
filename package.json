@@ -4,7 +4,8 @@
   "description": "Experimenting with the Spotify API",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify src/index.js -o dist/index.js -v"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/haod98/spotify_api#readme",
   "dependencies": {
-    "spotify-web-api-js": "^1.5.1"
+    "spotify-web-api-js": "^1.5.1",
+    "watchify": "^4.0.0"
   }
 }
