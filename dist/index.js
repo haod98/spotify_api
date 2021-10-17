@@ -2089,6 +2089,25 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
 }
 
 },{}],2:[function(require,module,exports){
-const Spotify = require('spotify-web-api-js');
-console.log(Spotify);
+const SpotifyWebApi = require("spotify-web-api-js");
+
+const spotifyApi = new SpotifyWebApi();
+const hashLink = window.location.hash;
+
+const getAfterEqualSign = window.location.hash.indexOf('=') + 1;
+const getAmpersandSign = window.location.hash.indexOf('&');
+
+const access_token = window.location.hash.substr(getAfterEqualSign, getAmpersandSign - getAfterEqualSign);
+const headers = new Headers();
+headers.set('Authorization', `Bearer ${access_token}`);
+
+console.log(access_token);
+spotifyApi.setAccessToken(access_token);
+spotifyApi.getMyTopTracks({type: 'artists'}, (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`Artist albums`, data);
+  }
+})
 },{"spotify-web-api-js":1}]},{},[2]);
