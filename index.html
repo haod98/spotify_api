@@ -11,9 +11,10 @@
 <body>
     <button class="login" id="login">Login</button>
 </body>
+<script src="../dist/index.js"></script>
 <script>
-    const successRedirect = decodeURI('http://127.0.0.1:5500/success.html');
-    const authRedirect = `https://accounts.spotify.com/authorize?client_id=d9a8b2f7634d48549a496954be94156f&redirect_uri=${encodeURI(successRedirect)}&response_type=token&scope=user-top-read`
+    const successRedirectUrl = decodeURI('http://127.0.0.1:5500/success.html');
+    const authRedirect = `https://accounts.spotify.com/authorize?client_id=d9a8b2f7634d48549a496954be94156f&redirect_uri=${encodeURI(successRedirectUrl)}&response_type=token&scope=user-top-read`
     document.querySelector('.login').addEventListener('click', () => window.location.replace(authRedirect));
 </script>
 

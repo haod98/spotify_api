@@ -10,9 +10,10 @@ const access_token = window.location.hash.substr(hashEqualSign, hashAndSign - ha
 const headers = new Headers();
 headers.set('Authorization', `Bearer ${access_token}`);
 
+
 console.log(access_token);
 spotifyApi.setAccessToken(access_token);
-spotifyApi.getMyTopTracks({type: 'artists'}, (err, data) => {
+spotifyApi.getMyTopTracks({limit: 10}, (err, data) => {
   if (err) {
     console.log(err);
   } else {
