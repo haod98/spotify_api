@@ -17,7 +17,9 @@
 </body>
 <script src="./dist/index.js"></script>
 <script>
-    const successRedirectUrl = decodeURI('https://haod98.github.io/spotify_api/success.html');
+    const githubUrl = "https://haod98.github.io/spotify_api/success.html";
+    const localhostUrl = "http://127.0.0.1:5500/success.html";
+    const successRedirectUrl = decodeURI(githubUrl);
     const authRedirect = `https://accounts.spotify.com/authorize?client_id=d9a8b2f7634d48549a496954be94156f&redirect_uri=${encodeURI(successRedirectUrl)}&response_type=token&scope=user-top-read`
     document.querySelector('.login').addEventListener('click', () => window.location.replace(authRedirect));
 </script>
